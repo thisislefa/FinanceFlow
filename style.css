@@ -1,0 +1,230 @@
+/* CSS Reset and Global Styles */
+        :root {
+            --font-family-base: 'Inter Tight', sans-serif;
+            --color-bg: #ffffff;
+            --color-text-main: #111111;
+            --color-text-muted: #666666;
+            --color-card-dark: #1a1a1a;
+            --color-card-purple: #0070b5; /* Bright periwinkle purple */
+            --color-text-white: #ffffff;
+            --color-accent-yellow: #eaff00;
+            --border-radius-lg: 24px;
+            --border-radius-sm: 12px;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* ------------------------------------------- */
+        /* Main Layout Container */
+        /* ------------------------------------------- */
+        .layout-container {
+            max-width: 1200px;
+            width: 92%;
+            padding: 60px 0;
+        }
+
+        /* ------------------------------------------- */
+        /* Header Section */
+        /* ------------------------------------------- */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 50px;
+            gap: 60px;
+        }
+
+        .headline-wrapper {
+            flex: 1.2;
+        }
+
+        .main-headline {
+            font-size: 68px;
+            font-weight: 500; /* Inter Tight has a nice weight at 500/600 */
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin: 0;
+        }
+
+        .subtext-wrapper {
+            flex: 1;
+            padding-bottom: 10px;
+        }
+
+        .header-subtext {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+            margin: 0;
+            max-width: 500px;
+        }
+
+        /* ------------------------------------------- */
+        /* Bento Grid Layout */
+        /* ------------------------------------------- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1.2fr; /* Ratio based on visual inspection */
+            gap: 15px;
+            position: relative;
+        }
+
+        /* Column Stacks */
+        .col-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ------------------------------------------- */
+        /* Card Styles */
+        /* ------------------------------------------- */
+        .card {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Top Left: Consultation Image */
+        .card-consultation {
+            height: 320px;
+            background-color: #f0f0f0;
+        }
+
+        /* Top Middle: Dark Stat Card */
+        .card-stat-dark {
+            height: 320px;
+            background-color: var(--color-card-dark);
+            color: var(--color-text-white);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Bottom Left: Purple Stat Card */
+        .card-stat-purple {
+            height: 320px;
+            background-color: var(--color-card-purple);
+            color: var(--color-text-white);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Bottom Middle: Portrait Image */
+        .card-portrait {
+            height: 320px;
+        }
+
+        /* Right Column: Tall Phone Image */
+        .card-tall {
+            height: 664px; /* 320 + 320 + 24 gap */
+        }
+
+        /* ------------------------------------------- */
+        /* Typography & Elements within Cards */
+        /* ------------------------------------------- */
+        
+        /* Large Stat Numbers */
+        .stat-number {
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        /* Descriptions */
+        .card-description {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+            
+        }
+
+        /* Icons */
+        .icon-bubble {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            backdrop-filter: blur(5px);
+            margin-bottom: auto; /* Push content down */
+        }
+        
+        /* Purple Card Specific Layout */
+        .purple-content-wrapper {
+            margin-top: 20px;
+        }
+        
+        .purple-content-wrapper .stat-number {
+            margin-bottom: 15px;
+        }
+
+       
+        /* ------------------------------------------- */
+        /* Responsive Design */
+        /* ------------------------------------------- */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .grid-col-right {
+                grid-column: span 2;
+            }
+            .card-tall {
+                height: 400px;
+            }
+            .header-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .main-headline {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .grid-col-right {
+                grid-column: span 1;
+            }
+            .main-headline {
+                font-size: 42px;
+            }
+            .floating-widget {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 20px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
