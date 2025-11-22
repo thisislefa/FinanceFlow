@@ -4,7 +4,7 @@ A modern, visually striking finance platform dashboard featuring a bento grid la
 
 ## Live Demo
 
-[View Live Demo](https://thisislefa.github.io/financeflow)
+[View Live Demo](https://thisislefa.github.io/FinanceFlow)
 
 ## Features
 
@@ -138,5 +138,6 @@ Update the bento grid cards by modifying the structure:
 - Professional imagery from Pexels
 - Fonts from Google Fonts
 - Icons from Font Awesome
+
 
 
